@@ -31,11 +31,19 @@ A weak correlation was found between geographical location and mortality rates. 
 
 ## Tools and Technologies Used:
 
-Programming Languages: Python, R
-Data Manipulation and Analysis: pandas, numpy
-Data Visualization: matplotlib, seaborn, Tableau
-Statistical Analysis: scipy, statsmodels
-Regression Analysis: R regression models
+### Programming Languages: 
+Python, R, SQL
+### Data Manipulation and Analysis:
+pandas, numpy
+
+### Data Visualization: 
+matplotlib, seaborn
+
+### Statistical Analysis: 
+scipy, statsmodels
+
+### Regression Analysis: 
+R regression models
 
 ## Insights:
 The analysis shows a correlation between hospital quality ratings and risk-adjusted mortality rates, with higher-rated hospitals generally having lower mortality rates. However, there are exceptions. The geographical location of hospitals shows only a weak correlation with mortality rates. The results highlight the need to consider additional factors beyond location and quality ratings when evaluating hospital performance.
