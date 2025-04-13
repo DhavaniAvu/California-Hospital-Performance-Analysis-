@@ -1,53 +1,126 @@
-# California-Hospital-Performance-Analysis
+# 🏥 California Hospital Performance Analysis
 
-## Project Overview:
-This project analyzes the dataset of California Hospital Inpatient Mortality Rates and Quality Ratings. The goal is to explore how hospital quality ratings relate to risk-adjusted mortality rates and how geographical location might influence these factors. The analysis aims to shed light on hospital performance and highlight areas for potential improvement.
+A comprehensive data-driven analysis of **California Hospital Inpatient Mortality Rates and Quality Ratings**, leveraging Python, R, and SQL to understand how hospital quality ratings correlate with patient outcomes and geographic patterns. This project combines statistical analysis, exploratory visualization, and basic modeling techniques to derive meaningful healthcare insights.
 
-## Research Questions and Findings:
+---
 
-### 1) Are hospitals with higher quality ratings more likely to have lower risk-adjusted mortality rates for specific procedures or conditions?
+## 📌 Overview
 
-#### Analysis: 
-Python was used to visualize data for hospital ratings, mortality rates, and specific procedures. The mean risk-adjusted mortality rates were calculated based on the quality ratings.
+This study investigates:
+- The relationship between hospital quality ratings and risk-adjusted mortality rates.
+- Identification of hospitals that consistently perform above or below the state average.
+- Geographic trends in mortality outcomes using spatial data (latitude and longitude).
 
-#### Findings: 
-Generally, hospitals with higher quality ratings tend to have lower risk-adjusted mortality rates. However, some highly-rated hospitals exhibit higher mortality rates for certain procedures.
+---
 
-### 2) Do any hospitals in California consistently have higher or lower mortality rates than the statewide average for specific procedures or conditions?
+## ❓ Research Questions
 
-#### Analysis: 
-R was used to filter the dataset for California hospitals and compare the average risk-adjusted mortality rates for each procedure/condition against the statewide averages.
+1. Do hospitals with higher quality ratings tend to have lower mortality rates for specific procedures?
+2. Are there hospitals in California that consistently have higher or lower mortality rates than the state average?
+3. Is there any relationship between a hospital’s geographic location and its risk-adjusted mortality rate?
 
-####  Findings: 
-Certain hospitals consistently show higher or lower mortality rates compared to the state average. Plots reveal the distribution of hospitals by their comparison category.
+---
 
-### 3) Is there a relationship between a hospital's geographical location and its risk-adjusted mortality rate for specific procedures or conditions?
+## 🧰 Tools & Technologies
 
-#### Analysis: 
-R was employed to create scatterplots and regression models to examine the relationship between hospital location (latitude and longitude) and risk-adjusted mortality rates.
+- **Languages:** Python, R, SQL  
+- **Libraries:**
+  - Python: `pandas`, `numpy`, `seaborn`, `matplotlib`
+  - R: `ggplot2`, `dplyr`, `tidyverse`, `stats`
+- **Database:** MYSQL
+- **Source:** [California Hospital Inpatient Mortality Rates and Quality Ratings Dataset](https://catalog.data.gov/dataset/california-hospital-inpatient-mortality-rates-and-quality-ratings-6815c)
 
-#### Findings:
-A weak correlation was found between geographical location and mortality rates. Regression analysis indicates a statistically significant relationship, though with a low R-squared value.
+---
 
-## Tools and Technologies Used:
+## 🧹 Data Cleaning & Feature Engineering
 
-### Programming Languages: 
-Python, R, SQL
-### Data Manipulation and Analysis:
-pandas, numpy
+Performed using **Python**:
+- Removed missing/invalid values (`NA`, `.`)
+- Converted object-type columns to numeric:
+  - `Risk Adjusted Mortality Rate`
+  - `# of Deaths`, `# of Cases`, `Longitude`, `Latitude`
+- Renamed columns for consistent access (replaced spaces with underscores)
+- Saved cleaned data as `modified_dataset.csv`
 
-### Data Visualization: 
-matplotlib, seaborn
+> 🔧 Basic feature engineering was performed. No advanced transformations (like one-hot encoding, scaling, or feature synthesis) were required for this descriptive/statistical study.
 
-### Statistical Analysis: 
-scipy, statsmodels
+---
 
-### Regression Analysis: 
-R regression models
+## 📊 Analytical Techniques Used
 
-## Insights:
-The analysis shows a correlation between hospital quality ratings and risk-adjusted mortality rates, with higher-rated hospitals generally having lower mortality rates. However, there are exceptions. The geographical location of hospitals shows only a weak correlation with mortality rates. The results highlight the need to consider additional factors beyond location and quality ratings when evaluating hospital performance.
+### ✅ Exploratory Data Analysis (EDA)
+- Histograms for:
+  - Hospital Ratings
+  - Mortality Rates
+  - Procedure Frequencies
+- Pivot tables and grouped aggregations
+- Visual relationship analysis between hospital rating and procedure-based mortality
+
+### ✅ Statistical Analysis
+- Descriptive statistics (mean, std, quartiles)
+- Correlation analysis between:
+  - Risk-Adjusted Mortality Rate ↔ Hospital Rating
+  - Mortality Rate ↔ Geographical coordinates
+
+### ✅ Basic Modeling & Evaluation
+- **Simple Linear Regression** (in R):
+  - Modeled mortality rate using latitude and longitude
+  - Coefficients and **R² score (0.0055)** reported
+- The weak R² indicates geography alone does not explain mortality variations
+
+> ⚠️ Advanced predictive modeling (e.g., Logistic Regression, Random Forest, etc.) and model evaluation metrics (MAE, RMSE, F1-score) were **not** part of this analysis scope.
+
+---
+
+## 📈 Key Findings
+
+- 📉 **Hospitals with "Better" or "As Expected" ratings tend to have lower mortality rates**
+- 🏥 Some hospitals **consistently outperform or underperform** state-wide averages
+- 🌎 Geographic trends show weak correlation with mortality outcomes
+
+---
+
+## 🗂 Project Structure
+
+📁 CaliforniaHospitalAnalysis/ 
+├── FinalProject.py # Data cleaning and visualization in Python 
+├── FinalProject.Rmd # Statistical modeling and visualizations in R 
+├── FinalProject.sql # SQL-based data queries and aggregation 
+├── CaliforniaHospitalProject.pdf # Full report in IEEE-style format 
+├── modified_dataset.csv # Cleaned dataset used across tools
 
 
-## REFER THE PDF FOR PAPER OF THIS PROJECT. REFER OTHER CODE FILES AND CSV FILE FOR CODING AND ANALYSIS REVIEW.
+---
 
+## ⚠️ Limitations
+
+- 📍 Dataset only covers **California hospitals**
+- 📄 Data is **self-reported** by hospitals (may include bias or errors)
+- 🧬 Lacks **patient-level clinical variables** (e.g., age, comorbidities)
+- ⏱ Covers a **limited time range (2016–2021)** and may not reflect recent trends
+
+---
+
+## 📚 References
+
+- [California Hospital Dataset (Data.gov)](https://catalog.data.gov/dataset/california-hospital-inpatient-mortality-rates-and-quality-ratings-6815c)
+- [Blackwell et al. (2016) – JAHA](https://www.ahajournals.org/doi/10.1161/JAHA.116.003731)
+- [Desai et al. (2018) – JAMA Open](https://doi.org/10.1001/jamanetworkopen.2018.3519)
+- [Reistetter et al. (2015) – APMR](https://doi.org/10.1016/j.apmr.2015.02.020)
+
+---
+
+## 🙌 Acknowledgments
+
+This project was created as part of **AIT-580: Data Analytics** at **George Mason University**, under the guidance of **Prof. Alla Webb**.  
+Special thanks to the **Department of Health Care Access and Information** for providing open access to this dataset.
+
+---
+
+## ✅ Conclusion
+
+- Strong correlation exists between hospital quality ratings and mortality outcomes.
+- Geographic location plays a minor role, but other unobserved factors may be more influential.
+- These insights can inform **healthcare policies, patient decisions**, and **hospital improvement initiatives**.
+
+---
